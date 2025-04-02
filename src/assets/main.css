@@ -13,7 +13,9 @@ html {
 }
 
 h1,
-h2 {
+h2,
+h3,
+p {
   margin-block: 0;
 }
 
