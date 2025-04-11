@@ -71,7 +71,7 @@ const formatCurrency = (num: number): string => {
   <section class="container space-y-4 py-10">
     <h1 class="text-2xl font-bold">Checkout</h1>
 
-    <main class="grid gap-6 md:grid-cols-3">
+    <main class="grid items-start gap-6 md:grid-cols-3">
       <div class="space-y-5 md:col-span-2">
         <div class="relative">
           <form @submit.prevent="">
@@ -84,18 +84,21 @@ const formatCurrency = (num: number): string => {
 
           <template v-if="filteredProducts.length">
             <div
-              class="absolute inset-x-0 z-10 mt-2 max-h-80 overflow-auto rounded-lg bg-white/80 shadow backdrop-blur-md"
+              :class="[
+                'absolute inset-x-0 z-10 mt-2 rounded-lg bg-white/80 shadow backdrop-blur-md',
+                'max-h-60 snap-y snap-mandatory overflow-auto',
+              ]"
             >
               <div
                 v-for="product in filteredProducts"
                 :key="product.id"
                 :class="[
-                  'flex cursor-pointer items-end justify-between p-4',
+                  'flex cursor-pointer snap-center items-end justify-between p-4',
                   'border-b transition-colors last:border-0 hover:bg-neutral-100',
                 ]"
                 @click="addToCart(product)"
               >
-                <div>
+                <div class="space-y-1">
                   <h4 class="text-base font-medium">{{ product.name }}</h4>
                   <p class="text-sm text-neutral-500">
                     {{ product.description }}
@@ -116,7 +119,7 @@ const formatCurrency = (num: number): string => {
               <h2 class="text-lg font-bold">Your Cart</h2>
             </div>
 
-            <div v-if="cart.length" class="mt-4">
+            <div v-if="cart.length" class="mt-4 space-y-4">
               <div
                 v-for="item in cart"
                 :key="item.id"
