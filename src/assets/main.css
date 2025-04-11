@@ -29,3 +29,11 @@
   margin-inline: auto;
   padding-inline: 1rem;
 }
+
+@layer components {
+  .flex-center {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+}
