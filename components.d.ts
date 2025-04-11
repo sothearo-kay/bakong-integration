@@ -8,7 +8,14 @@ export {}
 /* prettier-ignore */
 declare module 'vue' {
   export interface GlobalComponents {
-    AnimatePresence: typeof import('motion-v')['AnimatePresence']
+    IconArrowRight: typeof import('./src/components/icon/iconArrowRight.vue')['default']
+    IconCart: typeof import('./src/components/icon/iconCart.vue')['default']
+    IconChevronRight: typeof import('./src/components/icon/iconChevronRight.vue')['default']
+    IconMinus: typeof import('./src/components/icon/iconMinus.vue')['default']
+    IconPlus: typeof import('./src/components/icon/iconPlus.vue')['default']
+    IconSearch: typeof import('./src/components/icon/iconSearch.vue')['default']
+    IconX: typeof import('./src/components/icon/iconX.vue')['default']
+    UiCard: typeof import('./src/components/ui/uiCard.vue')['default']
     UiDialog: typeof import('./src/components/ui/uiDialog.vue')['default']
   }
 }
